@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Changing the docuemnt</title>
+</head>
+<body>
+  <p>One</p>
+  <p>Two</p>
+  <p>Three</p>
+  <p>Four</p>
+
+  <script>
+    // To add a child node to an element node, we can use appendChild, which puts
+    // it at the end of the list of children, or insertBefore, which inserts the node
+    // given as the first argument before the node given as the second argument.
+
+    let paragraphs = document.getElementsByTagName("p");
+    document.body.insertBefore(paragraphs[2], paragraphs[0]);
+
+    // The replaceChild method is used to replace a child node with another one.
+    // It takes as arguments two nodes: a new node and the node to be replaced.
+
+    // Note that both replaceChild and insertBefore expect the new node as their first
+    // argument.
+  </script>
+</body>
+</html>

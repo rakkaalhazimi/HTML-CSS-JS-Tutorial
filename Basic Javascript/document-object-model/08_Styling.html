@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Styling</title>
+</head>
+<body>
+  <p><a href=".">Normal Link</a></p>
+  <p><a href="." style="color: green">Green Link</a></p>
+
+  <p id="para" style="purple">
+    Nice text
+  </p>
+
+  <button onclick="changeColor()">Change Color</button>
+
+  <script>
+    function changeColor() {
+      let para = document.getElementById("para");
+      console.log(para.style.color);
+      para.style.color = "magenta";
+    }
+  </script>
+</body>
+</html>

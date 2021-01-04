@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Home Page</title>
+</head>
+<body>
+  <h1>My home page</h1>
+  <p>Hello, I am Marjin and this is my home page.</p>
+  <p>I am also wrote a book! Read it
+  <a href="http://eloquentjavascript.net">here</a></p>
+
+  <script>
+    // The following function scans a document for text nodes containing
+    // a given string and returns true when it has found one:
+
+    function talksAbout(node, string) {
+      if (node.nodeType == Node.ELEMENT_NODE) {
+        for (let child of node.childNodes) { // check every node
+          if (talksAbout(child, string)) {
+            return true;
+          }
+        }
+        return false;
+      } else if (node.nodeType == Node.TEXT_NODE) {
+          let context = node.nodeValue.toLowerCase();
+          return context.indexOf(string.toLowerCase()) > -1;
+        }
+      }
+
+    console.log(talksAbout(document.body, "book"));
+
+    // The nodeValue property of a text node holds the string of text that it represents.
+  </script>
+</body>
+</html>

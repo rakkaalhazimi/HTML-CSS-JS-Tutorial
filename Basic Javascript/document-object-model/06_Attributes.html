@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attributes</title>
+</head>
+<body>
+  <p data-classified="secret">The launch code is 00000000.</p>
+  <p data-classified="unclassified">I have two feet.</p>
+
+  <script>
+    // HTML allows you to set any attribute you want on nodes. This can be
+    // useful because it allows you to store extra information in a document. If you
+    // make up your own attribute names, though, such attributes will not be present
+    // as properties on the element’s node. Instead, you have to use the getAttribute
+    // and setAttribute methods to work with them.
+
+    let paras = document.body.getElementsByTagName("p");
+    for (let para of Array.from(paras)) {
+      if (para.getAttribute("data-classified") == "secret") {
+        para.remove();
+      }
+    }
+
+    // It is recommended to prefix the names of such made-up attributes with data-to
+    // ensure they do not conflict with any other attributes.
+  </script>
+</body>
+</html>

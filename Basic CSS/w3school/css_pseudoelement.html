@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pseudo Element</title>
+  <style>
+    h1::before {
+      content: "before content - "; \* add content before element *\
+    }
+
+    h2::after {
+      content: "- after content"; \* add content after element *\
+    }
+
+    ::selection {
+      color: blue;
+      background: white; \* selection will change color *\
+    }
+
+  </style>
+</head>
+<body>
+  <h1>This is heading</h1>
+  <h2>This is also heading</h2>
+  <p>select some text and see the difference !</p>
+</body>
+</html>

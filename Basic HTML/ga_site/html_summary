@@ -1,0 +1,363 @@
+Creating an HTML File
+=====================
+
+=> create a file name index.html
+    - The reason behind this is if the file is named index.html and it's at your root directory of your folder.
+      then your web browser will think that file as the homepage of your website.
+
+<!DOCTYPE html> ... telling my webbrowser, the type of this document is html.
+
+<html> ... starting tag (This is the highest level tag in our website)
+
+    <head> .. head of document - the tags that define information about the HTML document
+
+        <title>Rakka's Website</title> ... title tag - define the title of our website (before was index.html)
+
+    </head>
+
+    <body> ... body of document - where all of our HTML content is going to go
+
+    </body>
+
+</html> ... ending tag
+
+
+Basic tags
+==========
+
+<head>
+    <meta charset="UTF-8"> ... meta tag - set the character as utf-8
+    <meta name="description" content="This is an awesome website" ... display information in search page
+    ... name and content inside meta tag is attribute - giving the information that it needs to define meta data
+
+    <title>Rakka's Website</title>
+</head>
+
+<body>
+
+    <h1>Rakka's Website</h1> ... header tag - h1 is the biggest, h6 is the smallest
+    <br/> ... break tag - html ignore whitespace, so in order to create space, use this tag.
+    <hr/> ... horizontal rule - same like break tag, but use horizontal line.
+
+    <p>This is Rakka's paragraph</p> ... paragraph tag
+    <p>This is another paragraph</p>
+
+    Text edit tag:
+    <b></b> bold tag
+    <i></i> italic tag
+    <big></big> big char tag
+    <small></small> small char tag
+    <sub></sub> subscription tag
+
+</body>
+
+
+Comments
+========
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is an awesome website">
+        <title>Rakka's Website</title>
+    </head>
+    <body>
+        <!-- Invisible --> comment tag - show text in html, explain something that can't be explain by code
+    </body>
+
+</html>
+
+
+Style and Colors
+================
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is an awesome website">
+        <title>Rakka's Website</title>
+    </head>
+    <body>
+
+        <h2>Style and Colors</h2>
+        <p style="color: red; background-color:blue;">
+        You can style your HTML and make </p> -- change your font color
+
+    </body>
+
+</html>
+
+
+Formatting a Page
+=================
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="This is an awesome website">
+        <title>Rakka's Website</title>
+    </head>
+    <body style="background-color:teal;">
+
+        <header>
+            <nav>
+
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <section>
+                    <aside>
+
+                    </aside>
+                </section>
+                <section>
+
+                </section>
+            </article>
+        </main>
+
+        <footer>
+
+        </footer>
+
+
+    </body>
+</html>
+
+=> 3 main part in any website : Header, main and footer
+=> Specify the tags before building the website, will help google to read your html file
+
+
+Links
+=====
+
+<a href="https://www.google.com" target="_blank"><h1>Google's Homepage</h1></a>
+<hr/>
+<a href="page2.html">Page 2</a>
+<a href="dir1/page3.html">Page 3</a>
+<hr/>
+<a href="brs.png">Black rock shooter</a>
+
+=> You can link to specified html or file using "a" tag.
+=> The link address can be inserted in "href" attribute.
+=> href - where we want to link to
+=> When specifiying href url link, use precise address, be more specific.
+=> For the file link, use the directory of the file.
+
+
+Images
+======
+
+<a href="https://gamepress.gg/arknights/sites/arknights/files/2019-11/char_140_whitew_2.png">
+    <img width=100 height=100 src="brs.png" alt="Lappy"/>
+    </a>
+
+=> You can use image tag to place an image to your website.
+=> Then use "src" attribute to define the image source (url or file).
+=> In case the "src" is not found or broken, you can use "alt" attribute
+   to show an alternative image.
+=> You can also embedded link to your image.
+=> Specify the image size with "width" and "height" attribute.
+   If you only specify one of those, the html file will determine
+   the other size according to the aspect ratio.
+
+
+Videos
+======
+
+<video src="BetterAnimeSchedule.mp4" controls poster="thumbnail.PNG" width="902">Not found</video>
+
+=> use "video" tag to insert video on your website.
+=> specify "src" attribute like "image" tag.
+=> Your video will not playing unless you put the "controls" attribute on it.
+=> You can also specify the width and height just as the image does.
+=> Additional attributes are "loop" for playing video in time loop and "autoplay"
+    for auto play the video on openning.
+
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CnNm1WGJa2Q" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+=> You can insert youtube video on your website.
+=> Go to the youtube video url, and click share then click embed.
+=> It will generate the html code with "iframe" tag.
+=> iframe tag - this tag is used to peek at other website's content.
+=> any preferences can be modified, like autoplay, size, etc.
+
+
+Lists
+=====
+
+<h1>Unordered List</h1>
+<hr/>
+
+        <ul type="A">
+            <li><a href="#">Apples</a></li>
+            <li>Grapes</li>
+            <li>Bananas</li>
+        </ul>
+
+<hr/>
+
+<h1>Ordered List</h1>
+        <ol type="I">
+            <li><a href="#">Apples</a></li>
+            <li>Grapes
+                <ol>
+                    <li>Dragon lord grapes</li>
+                </ol>
+            </li>
+            <li>Bananas</li>
+        </ol>
+
+=> You can create list with "ul" or "ol" tags.
+=> "ul" stands for unordered list, while "ol" stands for ordered list
+=> inside those tags, place "li" tag which stands for list.
+=> You can change the symbol type of list by using "type" attr inside the
+    "ol" or "ul" tags. (type="A" - make the symbol use capital letter,
+                        type="a" - make the symbol use lower letter,
+                        type="I" - make the symbol use romawi letter)
+
+<dl>
+       <dt>Apples</dt>
+        <dd>- They are red and stonk</dd>
+        <dt>Oranges</dt>
+        <dd>- They are orange and helth</dd>
+    </dl>
+
+=> description list tag (dl) - use to create a list with description.
+=> description term (dt) - use to define the term or heading.
+=> describe dt (dd) - use to describe the description term.
+
+
+
+Tables
+======
+
+<table>
+        <thead>
+            <caption><h2>List of numbers</h2></caption>
+            <tr>
+                <th>num1</th>
+                <th>num2</th>
+                <th>num3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>one</td>
+                <td colspan="2">two</td>
+                <td>three</td>
+                <td>three and a half</td>
+            </tr>
+            <tr>
+                <td>four</td>
+                <td>five</td>
+                <td>six</td>
+            </tr>
+        </tbody>
+</table>
+
+=> table tag (table) - create a table
+=> caption tag (caption) - create table title
+=> table row (tr) - insert row
+=> table heading (th) - insert column heading
+=> table data (td) - insert column data
+=> thead tag - specify which part of table is the head
+=> tbody tag - specify which part of table is the body
+=> colspan attri - determine the column span, behaviour of column to take more than one place
+
+
+
+Div & Spans
+===========
+
+Two main display in HTML:
+
+=> Block element - Take the entire width page and force the next element to go below them.
+                    ex: <p>
+=> Inline element - Opposite from block element, it allow element to store be store next to each other.
+                    ex: <a>
+
+    <span>Span1</span>
+    <span>Span2</span>
+<hr/>
+    <div>Div1</div>
+    <div>Div2</div>
+
+So the main difference between spans and div is that
+"spans are inline containers" and "divs are block containers".
+
+
+
+Inputs and forms
+================
+
+    Username : <input type="text" value="Enter your username"/>
+<br/>
+    Password : <input type="password"/>
+<hr/>
+<textarea rows="10" cols="20">Enter a paragraph</textarea>
+
+=> input tag - let you create an input form in your website
+    Attribute:
+    -> text type - insert a text
+    -> password type - insert a password (showed *)
+    -> date type - insert a date
+    -> range - insert a slider
+    -> file - insert a open file button
+    -> checkbutton - insert a checkbutton, many click is possible
+    -> radiobutton - insert a radiobutton, only one click
+
+=> textarea tag - let you create an paragraph input which can be resize
+=> form tag - an element that is going to be used to store all of these input
+
+
+iFrames
+=======
+
+iFrames tag let you peek inside the other website and show it on you own.
+
+<iframe src="http://giraffeacademy.com" frameborder="0" width="1000" height="800">Sorry</iframe>
+
+attribute:
+    -> src - website link
+    -> widht, height - adjust box size
+    -> frameborder - enable or disable frame border.
+
+
+Meta tag
+========
+
+Meta tag lives in the head of html file, and the head is used to like find the information about the file
+or do some different like configuration with the file and these meta tags are used for metadata.
+
+use "name" attrb to define term, and "content" attr to define the description.
+
+<meta name="description" content="Your Description">
+    - full description of our website for the search engine to find.
+
+<meta name="author" content="Rakka">
+    - author information
+
+<meta name="keywords" content="HTML, Tutorial, Giraffe Academy">
+    - keyword for this website
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    - controls how your website is displayed on different devices
+    - width=device-width, define the current width as same as the device width
+
+
+Summary
+=======
+
+-HTML is the bone and the meat
+
+-CSS is the design
+
+-Javascript/Other language is the gears

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Overlapping Elements</title>
+    <style>
+        img {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: -1; /* specifies the stack order of an element */
+        }
+
+        h1 {
+            color: black;
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+    <img src="images/Pytorch_logo.png"/>
+    <h1>This will overlap the logo because the image has a negative z-index</h1>
+</body>
+</html>

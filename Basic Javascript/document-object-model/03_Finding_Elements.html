@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Finding Elements</title>
+</head>
+<body>
+  <p>My Ostrich Gertrude:</p>
+  <p><img id="gertrude" src="" alt="ostrich"></p>
+
+  <script>
+    // All element nodes have a getElementsByTagName method, which collects all
+    // elements with the given tag name that are descendants (direct or indirect children)
+    // of that node and returns them as an array-like object.
+
+    // To find a specific single node, you can give it an id attribute and use document
+    // .getElementById instead.
+
+    let ostrich = document.getElementById("gertrude");
+    alert(ostrich.alt);
+
+    // A third, similar method is getElementsByClassName, which, like getElementsByTagName
+    // , searches through the contents of an element node and retrieves all elements
+    // that have the given string in their class attribute.
+  </script>
+</body>
+</html>

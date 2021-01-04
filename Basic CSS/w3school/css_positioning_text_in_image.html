@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Positioning Text in Image</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+        }
+
+        .topleft {
+            position: absolute;
+            top: 8px;
+            left: 16px; /* if absolute, will go to the left of it ancestor */
+            font-size: 1.5em;
+        }
+
+        .topright {
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            font-size: 1.5em;
+            box-sizing:
+        }
+
+        .center {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            font-size: 1.5em;
+            text-align: center;
+        }
+
+        .bottomleft {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            font-size: 1.5em;
+        }
+
+        .bottomright {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            font-size: 1.5em;
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topleft">
+            <b>Top Left</b>
+        </div>
+        <div class="topright">
+            <b>Top Right</b>
+        </div>
+
+        <div class="center">
+            <b>Centered</b>
+        </div>
+
+        <div class="bottomleft">
+            <b>Bottom Left</b>
+        </div>
+        <div class="bottomright">
+            <b>Bottom Right</b>
+        </div>
+
+        <img src="images/ice-mountain.png"/>
+    </div>
+</body>
+</html>

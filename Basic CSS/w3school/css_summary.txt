@@ -1,0 +1,267 @@
+===
+CSS
+===
+
+CSS is a language that describes the style of an HTML document.
+CSS describes how HTML elements should be displayed
+
+
+===========
+Why Use CSS?
+============
+
+CSS is used to define styles for your web pages,
+including the design, layout and variations in display for different devices and screen sizes.
+
+
+========================
+CSS Solved a Big Problem
+========================
+HTML was NEVER intended to contain tags for formatting a web page!
+HTML was created to describe the content of a web page, like:
+
+<h1>This is a heading</h1>
+<p>This is a paragraph.</p>
+
+
+==========
+CSS Syntax
+==========
+
+selector    Declaration     Declaration
+   h1       {color:blue;    font-size:12px;}
+            prop    value   prop        value
+
+The selector points to the HTML element you want to style.
+The declaration block contains one or more declarations separated by semicolons.
+Each declaration includes a CSS property name and a value, separated by a colon.
+Multiple CSS declarations are separated with semicolons, and declaration blocks are surrounded by curly braces.
+
+============
+CSS Selector
+============
+CSS selectors are used to "find" (or select) the HTML elements you want to style.
+
+We can divide CSS selectors into five categories:
+
+    Simple selectors (select elements based on name, id, class)
+    Combinator selectors (select elements based on a specific relationship between them)
+    Pseudo-class selectors (select elements based on a certain state)
+    Pseudo-elements selectors (select and style a part of an element)
+    Attribute selectors (select elements based on an attribute or attribute value)
+
+
+The CSS element Selector
+------------------------
+The element selector selects HTML elements based on the element name
+
+ex : p {color:blue;}
+
+
+The CSS id Selector
+-------------------
+The id selector uses the id attribute of an HTML element to select a specific element.
+The id of an element is unique within a page, so the id selector is used to select one unique element!
+To select an element with a specific id, write a hash (#) character, followed by the id of the element.
+
+ex : #para1 {color:blue;}
+
+
+The CSS class Selector
+----------------------
+The class selector selects HTML elements with a specific class attribute.
+To select elements with a specific class, write a period (.) character, followed by the class name.
+
+ex: .center {color:blue;}
+    p.center {color:blue;} - only p tag with "center" class.
+    <p class="center large"> - multiple class in one tag.
+
+
+The CSS Universal Selector
+--------------------------
+The universal selector (*) selects all HTML elements on the page.
+
+* {color:blue'}
+
+
+The CSS Grouping Selector
+-------------------------
+The grouping selector selects all the HTML elements with the same style definitions.
+
+p, h1, h2 {color:blue;}
+
+
+==========
+CSS How to
+==========
+
+Three Ways to Insert CSS
+
+There are three ways of inserting a style sheet:
+    External CSS
+    Internal CSS
+    Inline CSS
+
+External CSS
+------------
+With an external style sheet, you can change the look of an entire website by changing just one file
+
+Internal CSS
+------------
+An internal style sheet may be used if one single HTML page has a unique style.
+The internal style is defined inside the <style> element, inside the head section.
+
+Inline CSS
+----------
+An inline style may be used to apply a unique style for a single element.
+To use inline styles, add the style attribute to the relevant element. The style attribute can contain any CSS property
+
+
+============
+CSS Comments
+============
+
+Comments are used to explain the code, and may help when you edit the source code at a later date.
+Comments are ignored by browsers.
+A CSS comment starts with /* and ends with */
+
+
+================
+CSS Border Style
+================
+
+The border-style property specifies what kind of border to display.
+
+The following values are allowed:
+
+    dotted - Defines a dotted border
+    dashed - Defines a dashed border
+    solid - Defines a solid border
+    double - Defines a double border
+    groove - Defines a 3D grooved border. The effect depends on the border-color value
+    ridge - Defines a 3D ridged border. The effect depends on the border-color value
+    inset - Defines a 3D inset border. The effect depends on the border-color value
+    outset - Defines a 3D outset border. The effect depends on the border-color value
+    none - Defines no border
+    hidden - Defines a hidden border
+
+
+===========
+CSS Margins
+===========
+
+The CSS margin properties are used to create space around elements, outside of any defined borders.
+
+With CSS, you have full control over the margins.
+There are properties for setting the margin for each side of an element (top, right, bottom, and left).
+
+
+Margin - Individual Sides
+-------------------------
+CSS has properties for specifying the margin for each side of an element:
+
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left
+
+All the margin properties can have the following values:
+
+    auto - the browser calculates the margin
+    length - specifies a margin in px, pt, cm, etc.
+    % - specifies a margin in % of the width of the containing element
+    inherit - specifies that the margin should be inherited from the parent element
+
+
+Margin - Shorthand Property
+---------------------------
+To shorten the code, it is possible to specify all the margin properties in one property.
+
+The margin property is a shorthand property for the following individual margin properties:
+
+    margin-top
+    margin-right
+    margin-bottom
+    margin-left
+
+So, here is how it works:
+
+If the margin property has four values:
+
+    margin: 25px 50px 75px 100px;
+        top margin is 25px
+        right margin is 50px
+        bottom margin is 75px
+        left margin is 100px
+
+
+If the margin property has three values:
+
+    margin: 25px 50px 75px;
+        top margin is 25px
+        right and left margins are 50px
+        bottom margin is 75px
+
+
+If the margin property has two values:
+
+    margin: 25px 50px;
+        top and bottom margins are 25px
+        right and left margins are 50px
+
+
+===========
+CSS Padding
+===========
+
+The CSS padding properties are used to generate space around an element's content,
+inside of any defined borders.
+
+With CSS, you have full control over the padding. There are properties for setting
+the padding for each side of an element (top, right, bottom, and left).
+
+CSS has properties for specifying the padding for each side of an element:
+
+    padding-top
+    padding-right
+    padding-bottom
+    padding-left
+
+All the padding properties can have the following values:
+
+    length - specifies a padding in px, pt, cm, etc.
+    % - specifies a padding in % of the width of the containing element
+    inherit - specifies that the padding should be inherited from the parent element
+
+
+Padding and Element Width
+-------------------------
+The CSS width property specifies the width of the element's content area. The content area
+is the portion inside the padding, border, and margin of an element (the box model).
+
+So, if an element has a specified width, the padding added to that element will be
+added to the total width of the element. This is often an undesirable result.
+
+div {
+    width: 30px;
+    padding: 25px;
+}
+
+To keep the width at 300px, no matter the amount of padding, you can use the box-sizing property.
+This causes the element to maintain its width; if you increase the padding, the available content space will decrease.
+
+div {
+    width: 300px;
+    padding: 25px;
+    box-sizing: border-box;
+}
+
+
+============================
+CSS Setting height and width
+============================
+
+The height and width properties are used to set the height and width of an element.
+
+The height and width properties do not include padding, borders, or margins. It sets the
+height/width of the area inside the padding, border, and margin of the element.

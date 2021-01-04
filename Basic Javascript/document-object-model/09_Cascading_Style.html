@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cascading Style</title>
+
+  <style>
+    strong {
+    font-style: italic;
+    color: gray;
+    }
+
+    .subtle {
+      color: gray;
+      font-size: 80%;
+    }
+
+    #header {
+      background: blue;
+      color: white;
+    }
+
+    /* p elements with id main and with classes a and b */
+    p#main.a.b {
+      color: white;
+      background: gray;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: blue;
+    }
+
+  </style>
+
+</head>
+<body>
+  <!--
+  The styling system for HTML is called CSS, for Cascading Style Sheets. A style
+  sheet is a set of rules for how to style elements in a document.
+
+  Styles in a style attribute applied directly to
+  the node have the highest precedence and always win.
+
+  The precedence rule favoring the most recently defined rule applies only
+  when the rules have the same specificity.
+
+  A rule’s specificity is a measure of
+  how precisely it describes matching elements, determined by the number and
+  kind (tag, class, or ID) of element aspects it requires. For example, a rule that
+  targets p.a is more specific than rules that target p or just .a and would thus
+  take precedence over them.
+  -->
+
+  <p>Now <strong>strong text</strong> is italic and gray.</p>
+  <p id="main" class="a b">This is "p" tag with id "main" and from class "a" and "b".</p>
+
+  <script>
+
+  </script>
+</body>
+</html>

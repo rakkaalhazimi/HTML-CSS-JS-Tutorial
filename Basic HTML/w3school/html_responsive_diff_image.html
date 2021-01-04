@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Different Image based on Device size</title>
+    <style>
+        source, img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Lappland</h1>
+    <picture>
+        <source srcset="lappy1.png" media="(max-width: 600px)"/>
+        <source srcset="lappy.png" media="(max-width: 1500px"/>
+        <img src="lappy1.png"/>
+    </picture>
+</body>
+</html>

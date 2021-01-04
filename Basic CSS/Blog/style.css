@@ -1,0 +1,73 @@
+body {
+    margin:0;
+    padding:0; /* clearing out padding and margin */
+    color:#ccc;
+}
+
+.nav ul {
+    list-style: none;
+    background-color: #444;
+    text-align: center; /* styling non-navigational unordered-list */
+    padding: 0;
+    margin: 0;
+}
+
+.nav li {
+    font-family: "Oswald", sans-serif;
+    font-size: 1.2em; /* 1em is equal standard font-size (12pt) */
+    line-height: 40px;
+    height: 40px; /* set the typography */
+    border-bottom: 1px solid #888;
+}
+
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    display: block; /* span entire block */
+    transition: .5s background-color;
+    /* transition on bg color, place in a tag allow transitions
+        when you move mouse over the link and away the link.
+    */
+}
+
+.nav a:hover {
+    background-color: #005f5f; /* color when we hover */
+
+}
+
+.nav a.active {
+    background-color: #fff;
+    color: #444;
+    cursor: default;
+}
+
+header h1 {
+    text-align:center;
+}
+
+@media screen and (min-width: 600px) { /* When the screen is larger than 600px: */
+    .nav li {
+        width: 120px; /* make each menu 120px width (120 px x 5 = 600) */
+        border-bottom: none; /* remove the bottom-border line */
+        height: 50px;
+        line-height: 50px;
+        font-size: 1.4em;
+    }
+
+
+    /* Option 1 */
+    .nav li {
+        display: inline-block; /* make the navbar horizontal */
+        margin-right: -4px;
+        /* When the screen is around 600px, the last list will jumps to
+           another line, when using inline-block there is a bit of margin that is
+           introduced. So, we can deal with it by adding a small negative margin.
+           This will make the list closely adjacent.
+        */
+    }
+
+
+
+
+}
+

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Handling</title>
+</head>
+<body>
+  <!--
+  A better mechanism to find out whether a key on keyboard is being pressed
+  is for the system to actively notify our code when an
+  event occurs. Browsers do this by allowing us to register functions as handlers
+  for specific events.
+  -->
+
+  <p>Click this document to activate the handler</p>
+  <script>
+    window.addEventListener("click", () => alert("knocked"));
+  </script>
+
+  <!--
+  The window binding refers to a built-in object provided by the browser.
+  It represents the browser window that contains the document. Calling its
+  addEventListener method registers the second argument to be called whenever
+  the event described by its first argument occurs.
+  -->
+</body>
+</html>

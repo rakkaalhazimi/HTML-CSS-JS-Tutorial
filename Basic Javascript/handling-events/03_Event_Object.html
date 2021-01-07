@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Event Object</title>
+</head>
+<body>
+  <!--
+  event handler functions are passed an argument:
+  the event object. This object holds additional information about the
+  event. For example, if we want to know which mouse button was pressed, we
+  can look at the event object’s button property.
+  -->
+
+  <button>Click me any way you want</button>
+  <script>
+    let button = document.querySelector("button");
+    button.addEventListener("mousedown", event => {
+      if (event.button == 0) {
+        console.log("Left Button");
+      } else if (event.button == 1) {
+        console.log("Middle Button");
+      } else if (event.button == 2) {
+        console.log("Right Button");
+      }
+    });
+  </script>
+
+  <!--
+  The information stored in an event object differs per type of event. We’ll
+  discuss different types later in the chapter. The object’s type property always
+  holds a string identifying the event (such as "click" or "mousedown").
+  -->
+
+</body>
+</html>

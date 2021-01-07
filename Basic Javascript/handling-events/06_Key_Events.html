@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key Event</title>
+</head>
+<body>
+  <!--
+  When a key on the keyboard is pressed, your browser fires a "keydown" event.
+  When it is released, you get a "keyup" event.
+  -->
+
+  <p>This page turn violet when you told the V key.</p>
+  <script>
+    let rndNumber = () => Math.random() * 129;
+    window.addEventListener("keydown", event => {
+      if (event.key == "v") {
+        document.body.style.background = `rgb(${rndNumber()}, ${rndNumber()}, ${rndNumber()})`;
+      }
+    });
+    window.addEventListener("keyup", event => {
+      document.body.style.background = "";
+    });
+  </script>
+
+  <!--
+  Despite its name, "keydown" fires not only when the key is physically pushed
+  down. When a key is pressed and held, the event fires again every time the
+  key repeats. Pleaes be careful about this.
+
+  The example looked at the key property of the event object to see which
+  key the event is about. This property holds a string that, for most keys,
+  corresponds to the thing that pressing that key would type.
+
+  example: ENTERS would hold "Enter" string.
+
+  If you hold shift while pressing a key, that might also influence the name of
+  the key—"v" becomes "V", and "1" may become "!", if that is what pressing
+  shift-1 produces on your keyboard.
+
+  Modifier keys such as shift, control, alt, and meta (command on Mac)
+  generate key events just like normal keys.
+
+  But when looking for key combinations,
+  you can also find out whether these keys are held down by looking at
+  the shiftKey, ctrlKey, altKey, and metaKey properties of keyboard and mouse
+  events.
+  -->
+
+  <p>Press control-space to continue</p>
+  <script>
+    window.addEventListener("keydown", event => {
+      if (event.key == " " && event.ctrlKey) {
+        console.log("Continuing !");
+      }
+    });
+  </script>
+
+  <!--
+  The DOM node where a key event originates depends on the element that
+  has focus when the key is pressed. Most nodes cannot have focus unless you
+  give them a tabindex attribute, but things like links, buttons, and form fields
+  can.
+
+  When nothing in particular
+  has focus, document.body acts as the target node of key events.
+
+  When the user is typing text, using key events to figure out what is being
+  typed is problematic.
+
+  To notice when something was typed, elements that you can type into, such
+  as the <input> and <textarea> tags, fire "input" events whenever the user
+  changes their content. To get the actual content that was typed, it is best to
+  directly read it from the focused field.
+  -->
+  <p>Pressing "v" will trigger the event even on text area</p>
+  <textarea style="border 1px solid black"></textarea>
+
+</body>
+</html>

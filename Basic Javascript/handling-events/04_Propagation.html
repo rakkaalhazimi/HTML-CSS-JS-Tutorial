@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Propagation</title>
+</head>
+<body>
+  <!--
+  For most event types, handlers registered on nodes with children will also receive
+  events that happen in the children.
+
+  But if both the paragraph and the button have a handler, the more specific
+  handler—the one on the button—gets to go first.
+
+  The event is said to propagate
+  outward, from the node where it happened to that node’s parent node and on
+  to the root of the document.
+
+  Finally, after all handlers registered on a specific
+  node have had their turn, handlers registered on the whole window get a chance
+  to respond to the event.
+
+  At any point, an event handler can call the stopPropagation method on the
+  event object to prevent handlers further up from receiving the event.
+
+  This can
+  be useful when, for example, you have a button inside another clickable element
+  and you don’t want clicks on the button to activate the outer element’s click
+  behavior.
+
+  The following example registers "mousedown" handlers on both a button and
+  the paragraph around it. When clicked with the right mouse button, the handler
+  for the button calls stopPropagation.
+  -->
+
+  <p>A paragraph with a <button>button</button></p>
+  <script>
+    let para = document.querySelector("p");
+    let button = document.querySelector("button");
+    para.addEventListener("mousedown", () => {
+      console.log("Hanlder for paragraph");
+    });
+    button.addEventListener("mousedown", event => {
+      console.log("Handler for button.");
+      if (event.button == 2) event.stopPropagation();
+    });
+  </script>
+
+  <!--
+  Most event objects have a target property that refers to the node where they
+  originated.
+
+  You can use this property to ensure that you’re not accidentally
+  handling something that propagated up from a node you do not want to handle.
+
+  If you have a node containing a long list of buttons,
+  it may be more convenient to register a single click handler on the outer node
+  and have it use the target property to figure out whether a button was clicked,
+  rather than register individual handlers on all of the buttons.
+  -->
+
+  <button>A</button>
+  <button>B</button>
+  <button>C</button>
+  <script>
+    document.body.addEventListener("click", event => {
+      if (event.target.nodeName == "BUTTON") {
+        console.log("Clicked", event.target.textContent);
+      }
+    });
+  </script>
+
+</body>
+</html>

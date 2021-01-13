@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Wrap</title>
+</head>
+  <style>
+    .flex-container {
+      display: flex;
+      flex-wrap: wrap;              /* wrap element inside */
+      background-color: DodgerBlue;
+    }
+
+    .flex-container > div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+  </style>
+<body>
+  <h1>The flex-wrap Property</h1>
+  <p class="detail">The "flex-wrap: wrap;" specifies that the flex items will wrap if necessary:</p>
+
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+    <div>11</div>
+    <div>12</div>
+  </div>
+
+<p>Try resizing the browser window.</p>
+<button onclick="changeWrap()">Change Warp</button>
+</body>
+
+<script>
+  let state = 0;
+  let flex_container = document.querySelector(".flex-container");
+  let detail = document.querySelector(".detail");
+  let paragraph = {
+    0 : "The flex-wrap: wrap; specifies that the flex items will wrap if necessary:",
+    1 : "The nowrap value specifies that the flex items will not wrap (this is default):",
+    2 : "The wrap-reverse value specifies that the flexible items will wrap if necessary, in reverse order:"
+  }
+
+  function changeWrap() {
+    state++;
+    if (state > 2) {state = 0};
+    switch(state) {
+      case 0:
+        flex_container.style.flexWrap = "wrap";
+        detail.textContent = paragraph[0];
+        break;
+      case 1:
+        flex_container.style.flexWrap = "nowrap";
+        detail.textContent = paragraph[1];
+        break;
+      case 2:
+        flex_container.style.flexWrap = "wrap-reverse";
+        detail.textContent = paragraph[2];
+        break;
+    }
+  }
+</script>
+
+</html>

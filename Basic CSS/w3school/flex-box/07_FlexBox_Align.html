@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Align Items</title>
+  <style>
+.flex-container {
+  display: flex;
+  height: 200px;
+  align-items: center;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+
+</head>
+
+<body>
+<h1>The align-items Property</h1>
+<p>The align-items property is used to align the flex items (as a whole).</p>
+<p class="detail">The "align-items: center;" aligns the flex items in the middle of the container:</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+</div>
+
+<button onclick="changeAlign()">Change Align</button>
+
+</body>
+
+<script>
+  let state = 0;
+  let flex_container = document.querySelector(".flex-container");
+  let detail = document.querySelector(".detail");
+  let paragraph = {
+    0 : {mode: "center",
+         desc: "The 'align-items: center;' aligns the flex items in the middle of the container:"},
+
+    1 : {mode: "flex-start",
+         desc: "The 'align-items: flex-start;' aligns the flex items at the top of the container:"},
+
+    2 : {mode: "flex-end",
+         desc:"The 'align-items: flex-end;' aligns the flex items at the bottom of the container:"},
+
+    3 : {mode: "stretch",
+         desc: "The 'align-items: stretch;' stretches the flex items to fill the container (this is default)"},
+
+    4 : {mode: "baseline",
+         desc: "The 'align-items: baseline;' aligns the flex items such as their baselines aligns:"}
+  }
+  let keys = Object.keys(paragraph);
+  let maxIndex = parseInt(keys[keys.length - 1]);
+  console.log(paragraph[0].mode);
+
+  function changeAlign() {
+    state++;
+    if (state > maxIndex) {state = 0};
+    flex_container.style.alignItems = paragraph[state].mode;
+    detail.textContent = paragraph[state].desc;
+  }
+</script>
+
+</html>

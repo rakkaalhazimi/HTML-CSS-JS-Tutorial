@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Align Content</title>
+  <style>
+.flex-container {
+  display: flex;
+  height: 600px;
+  flex-wrap: wrap;
+  align-content: space-between;
+  background-color: DodgerBlue;
+}
+
+.flex-container > div {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+  line-height: 75px;
+  font-size: 30px;
+}
+</style>
+
+</head>
+
+<body>
+<h1>The align-content Property</h1>
+<p>The align-content property is used to align the flex lines.</p>
+<p class="detail">The "align-content: space-between;" displays the flex lines with equal space between them:</p>
+
+<div class="flex-container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+</div>
+
+<button onclick="changeAlign()">Change Align Content</button>
+
+</body>
+
+<script>
+  let state = 0;
+  let flex_container = document.querySelector(".flex-container");
+  let detail = document.querySelector(".detail");
+  let paragraph = {
+    0 : {mode: "space-between",
+         desc: "The 'align-content: space-between;' displays the flex lines with equal space between them:"},
+
+    1 : {mode: "space-around",
+         desc: "The 'align-content: space-around;' displays the flex lines with space before, between, and after them:"},
+
+    2 : {mode: "stretch",
+         desc: "The 'align-content: stretch;' stretches the flex lines to take up the remaining space (this is default):"},
+
+    3 : {mode: "center",
+         desc: "The 'align-content: center;' display the flex lines in the middle of the container:"},
+
+    4 : {mode: "flex-start",
+         desc: "The 'align-content: flex-start;' displays the flex lines at the start of the container:"},
+
+    5 : {mode: "flex-end",
+         desc: "The 'align-content: flex-end;' displays the flex lines at the end of the container:"},
+  }
+  let keys = Object.keys(paragraph);
+  let maxIndex = parseInt(keys[keys.length - 1]);
+
+  function changeAlign() {
+    state++;
+    if (state > maxIndex) {state = 0};
+    flex_container.style.alignContent = paragraph[state].mode;
+    detail.textContent = paragraph[state].desc;
+  }
+</script>
+
+</html>

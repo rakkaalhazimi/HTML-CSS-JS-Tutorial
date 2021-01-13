@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Item Properties</title>
+  <style>
+    .flex-container {
+      display: flex;
+      align-items: stretch;
+      background-color: #f1f1f1;
+    }
+
+    .flex-container>div {
+      background-color: DodgerBlue;
+      color: white;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+  <h1>The order Property</h1>
+  <p>The order property specifies the order of the flex items.</p>
+  <p>Use the order property to sort the flex items as you like:</p>
+
+  <div class="flex-container">
+    <div style="order: 3">1</div>
+    <div style="order: 2">2</div>
+    <div style="order: 4">3</div>
+    <div style="order: 1">4</div>
+  </div>
+
+  <hr/>
+
+  <h1>The flex-grow Property</h1>
+  <p>The flex-grow property specifies how much a flex item will grow relative to the rest of the flex items.</p>
+  <p>Make the third flex item grow eight times faster than the other flex items:</p>
+
+  <div class="flex-container">
+    <div style="flex-grow: 1">1</div>
+    <div style="flex-grow: 1">2</div>
+    <div style="flex-grow: 8">3</div>
+  </div>
+
+  <hr/>
+
+  <h1>The flex-shrink Property</h1>
+  <p>The flex-shrink property specifies how much a flex item will shrink relative to the rest of the flex items.</p>
+  <p>Do not let the third flex item shrink as much as the other flex items:</p>
+
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex-shrink: 0">3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+    <div>9</div>
+    <div>10</div>
+  </div>
+
+  <hr/>
+
+  <h1>The flex-basis Property</h1>
+  <p>The flex-basis property specifies the initial length of a flex item.</p>
+  <p>Set the initial length of the third flex item to 200 pixels:</p>
+
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex-basis:200px">3</div>
+    <div>4</div>
+  </div>
+
+  <hr/>
+
+  <h1>The flex Property</h1>
+  <p>The flex property is a shorthand property for the flex-grow, flex-shrink, and flex-basis properties.</p>
+  <p>Make the third flex item not growable (0), not shrinkable (0), and with an initial length of 200 pixels:</p>
+
+  <div class="flex-container">
+    <div>1</div>
+    <div>2</div>
+    <div style="flex: 0 0 200px">3</div>
+    <div>4</div>
+  </div>
+
+</body>
+</html>

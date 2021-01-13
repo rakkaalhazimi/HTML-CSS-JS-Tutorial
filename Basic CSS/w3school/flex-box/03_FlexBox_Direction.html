@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flex Direction Property</title>
+  <style>
+    .flex-1 {
+      flex-direction: column;                  /* Stacks flex item vertically (top-bottom) */
+    }
+
+    .flex-2 {
+    flex-direction: column-reverse;            /* Stacks flex item vertically but reverse (bottom-top) */
+    }
+
+    .flex-3 {
+      flex-direction: row;                     /* Stacks flex item horizontally (left-right) */
+    }
+
+    .flex-4 {
+      flex-direction: row-reverse;             /* Stacks flex item horizontally but reverse (right-left) */
+    }
+
+
+    .flex-container {
+      display: flex;
+      background-color: DodgerBlue;
+    }
+
+    .flex-container > div {
+      background-color: #f1f1f1;
+      width: 100px;
+      margin: 10px;
+      text-align: center;
+      line-height: 75px;
+      font-size: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>The flex-direction Property</h1>
+  <p>The "flex-direction: column;" stacks the flex items vertically (from top to bottom):</p>
+
+  <div class="flex-container flex-1">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <h1>The flex-direction Property</h1>
+  <p>The "flex-direction: column-reverse;" stacks the flex items vertically (but from bottom to top):</p>
+
+  <div class="flex-container flex-2">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <h1>The flex-direction Property</h1>
+  <p>The "flex-direction: row;" stacks the flex items horizontally (from left to right):</p>
+
+  <div class="flex-container flex-3">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+  <h1>The flex-direction Property</h1>
+  <p>The "flex-direction: row-reverse;" stacks the flex items horizontally (but from right to left):</p>
+
+  <div class="flex-container flex-4">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+
+</body>
+</html>

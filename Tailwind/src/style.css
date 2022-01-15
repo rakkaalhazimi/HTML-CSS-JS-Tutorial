@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    box-sizing: border-box;
+}
+
+.sidebar-icon {
+    @apply flex flex-row justify-start gap-2 p-2
+            hover:bg-white hover:text-black hover:translate-x-5
+            transition ease-in duration-300
+            cursor-pointer 
+}
+
+.sidebar-expand {
+    @apply bg-red-500;
+}
+
+.sidebar-icon svg {
+    @apply w-6 h-6
+}
+
+#sidebar-icon-first {
+    @apply mt-20
+}
+
+#sidebar-icon-last {
+    @apply mt-auto mb-10
+         hover:bg-red-600 hover:text-white
+}
+
+.expand-sidebar,
+.expand-sidebar svg {
+    @apply w-8 h-8
+}
+

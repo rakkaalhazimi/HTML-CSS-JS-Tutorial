@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mutation</title>
+</head>
+<body>
+  <h1 id="greeting">Hello World</h1>
+  
+  <form action="">
+    <input id="greeting_input" type="text">
+    <input id="submit" type="submit" value="Submit">
+  </form>
+  
+  <script>
+    const greet = document.getElementById("greeting")
+    const greetInput = document.getElementById("greeting_input")
+    const submit = document.getElementById("submit")
+    
+    submit.addEventListener("click", (event) => {
+      event.preventDefault()
+      greet.innerHTML = greetInput.value
+    })
+    
+    function greetChangeCallback(mutationList, observer) {
+      for (const mutation of mutationList) {
+        console.log("Something changed...")
+      }
+    }
+    
+    const config = {attributes: true}
+    const observer = new MutationObserver(greetChangeCallback)
+    observer.observe(greet, config)
+    
+  </script>
+</body>
+</html>

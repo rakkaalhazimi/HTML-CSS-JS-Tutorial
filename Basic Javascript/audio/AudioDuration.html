@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <label for="upload-file">Upload</label>
+  <input id="upload-file" type="file">
+  
+  
+  <script>
+    
+    const getDuration = (file) => {
+      const reader = new FileReader();
+      reader.readAsArrayBuffer(file);
+      reader.onloadend = (e) => {
+          const ctx = new AudioContext();
+          const audioArrayBuffer = e.target.result;
+          ctx.decodeAudioData(audioArrayBuffer, data => {
+            // this is the success callback
+            const duration = data.duration;
+            console.log('Audio file duration: ' + duration);
+          }, error => {
+            // this is the error callback
+            console.error(error);
+          });
+      };
+    };
+    
+    let uploadForm = document.getElementById('upload-file');
+    uploadForm.addEventListener('change', (e) => {
+      let file = uploadForm.files[0];
+      console.log(getDuration(file));
+    })
+    
+    
+    
+    
+  </script>
+  
+  
+</body>
+</html>

@@ -69,6 +69,7 @@ class FoundWaifu extends PotentialWaifu {
     private name: string
 
     public constructor(name: string) {
+        // super must be called before accessing `this` in constructor
         super()
         this.name = name
     }

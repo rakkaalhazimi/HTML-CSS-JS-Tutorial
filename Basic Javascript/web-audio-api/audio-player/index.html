@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audio Player</title>
+  <link rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+<body>
+  
+  <audio id="audio-source" src="Lappland-033.ogg"></audio>
+  
+  <div id="audio-player-widget">
+    <input type="range" min="0" max="100" name="audio-player-slider" id="audio-player-slider">
+  </div>
+  
+  
+  <button onclick="play()">Play</button>
+  <button onclick="pause()">Pause</button>
+  <p id="timer">00:00</p>
+  
+  <script src="index.js"></script>
+  
+</body>
+</html>

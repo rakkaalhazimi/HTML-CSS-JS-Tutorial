@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <script type="text/javascript">
+    
+    const tenyom = new RTCPeerConnection();
+    const combro = new RTCPeerConnection();
+    
+    tenyom.createOffer()
+      .then((offer) => tenyom.setLocalDescription(new RTCSessionDescription(offer)))
+      .then(() => combro.setRemoteDescription(tenyom.localDescription))
+      .then(() => combro.createAnswer())
+      .then((answer) => combro.setLocalDescription(new RTCSessionDescription(answer)))
+      .then(() => tenyom.setRemoteDescription(combro.localDescription))
+    
+  </script>
+  
+</body>
+</html>

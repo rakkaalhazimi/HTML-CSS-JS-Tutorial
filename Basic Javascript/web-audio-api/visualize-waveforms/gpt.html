@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Waveform Visualizer</title>
+</head>
+<body>
+    <input type="file" accept="audio/*" id="audioInput">
+    <canvas id="waveformCanvas" width="800" height="200"></canvas>
+
+    <script>
+        document.getElementById('audioInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const audioData = e.target.result;
+                
+                audioContext.decodeAudioData(audioData, function(buffer) {
+                    visualizeAudio(buffer);
+                });
+            };
+
+            reader.readAsArrayBuffer(file);
+        });
+
+        function visualizeAudio(audioBuffer) {
+            const canvas = document.getElementById('waveformCanvas');
+            const context = canvas.getContext('2d');
+
+            const width = canvas.width;
+            const height = canvas.height;
+
+            const data = audioBuffer.getChannelData(0); // Get data from the first channel
+
+            context.clearRect(0, 0, width, height);
+            context.beginPath();
+            const sliceWidth = width / data.length;
+            let x = 0;
+            for(let i = 0; i < data.length; i++){
+                const y = (data[i] + 1) * height / 2; // Adjusting amplitude to fit canvas
+                if(i === 0) {
+                    context.moveTo(x, y);
+                } else {
+                    context.lineTo(x, y);
+                }
+                x += sliceWidth;
+            }
+            context.strokeStyle = '#000';
+            context.lineWidth = 1;
+            context.stroke();
+        }
+    </script>
+</body>
+</html>
